@@ -1,0 +1,22 @@
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\bin\Debug\Queen.exe.config
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\bin\Debug\Queen.exe
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\bin\Debug\Queen.pdb
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\bin\Debug\Queen.xml
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\obj\Debug\Queen.vbprojResolveAssemblyReference.cache
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\obj\Debug\Queen.Resources.resources
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\obj\Debug\Queen.vbproj.GenerateResource.Cache
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\obj\Debug\Queen.exe
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\obj\Debug\Queen.xml
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\obj\Debug\Queen.pdb
+C:\Users\LCN\AppData\Local\Temporary Projects\Queen\obj\Debug\Queen.八皇后问题.resources
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\bin\Debug\Queen.exe.config
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\obj\Debug\Queen.exe
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\obj\Debug\Queen.xml
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\obj\Debug\Queen.pdb
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\bin\Debug\Queen.exe
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\bin\Debug\Queen.pdb
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\bin\Debug\Queen.xml
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\obj\Debug\Queen.vbprojResolveAssemblyReference.cache
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\obj\Debug\Queen.八皇后问题.resources
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\obj\Debug\Queen.Resources.resources
+C:\Users\LCN\Documents\Visual Studio 2015\Projects\Queen\Queen\obj\Debug\Queen.vbproj.GenerateResource.Cache
