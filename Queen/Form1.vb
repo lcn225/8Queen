@@ -9,6 +9,8 @@ Public Class 八皇后问题
 
     Private Sub formatDGV()
 
+        View_DataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
         For index = 1 To 8
             View_DataGridView.Rows.Add()
             View_DataGridView.Rows(index - 1).Height = 40
@@ -16,6 +18,12 @@ Public Class 八皇后问题
 
         For index = 1 To 8
             View_DataGridView.Columns(index - 1).Width = 40
+        Next
+
+        For index = 1 To 8
+            For j = 1 To 8
+                View_DataGridView.Rows(index - 1).Cells(j - 1).Value = ""
+            Next
         Next
 
     End Sub
@@ -35,10 +43,34 @@ Public Class 八皇后问题
         Next
 
     End Sub
+    ''在棋盘上展示当前解
+
+    Private Sub displayDGV(ans As String)
+
+        Dim an(0 To 7) As Integer
+
+        For index = 0 To 7
+            an(index) = Mid(ans, 2 * index + 4, 1)
+        Next
+
+        For index = 1 To 8
+            For j = 1 To 8
+                View_DataGridView.Rows(index - 1).Cells(j - 1).Value = ""
+            Next
+        Next
+
+        For index = 1 To 8
+            If loc(index - 1) > 0 Then
+                View_DataGridView.Rows(index - 1).Cells(an(index - 1) - 1).Value = "○"
+            End If
+        Next
+
+    End Sub
+    ''在棋盘上展示指定借
 
     Private Sub textshow()
 
-        Label1.Text = "目前：" & queenNum & vbCrLf
+        Label1.Text = "目前：" & answerNum & vbCrLf
 
         For index = 1 To 8
             Label1.Text = Label1.Text & index & ": " & index & "," & loc(index - 1) & vbCrLf
@@ -95,6 +127,7 @@ Public Class 八皇后问题
         movequeen(i)
 
     End Sub
+    ''找到第i个棋子的放法
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         formatDGV()
@@ -149,5 +182,10 @@ Public Class 八皇后问题
 
         FileClose(1)
 
+    End Sub
+
+    Private Sub Answer_ListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Answer_ListBox.SelectedIndexChanged
+        Dim ans As String = Answer_ListBox.SelectedItem.ToString
+        displayDGV(ans)
     End Sub
 End Class
