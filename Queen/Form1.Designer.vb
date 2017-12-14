@@ -35,6 +35,7 @@ Partial Class 八皇后问题
         Me.Move_Button = New System.Windows.Forms.Button()
         Me.Answer_ListBox = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.AS_Button = New System.Windows.Forms.Button()
         CType(Me.View_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -152,11 +153,21 @@ Partial Class 八皇后问题
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Label1"
         '
+        'AS_Button
+        '
+        Me.AS_Button.Location = New System.Drawing.Point(350, 383)
+        Me.AS_Button.Name = "AS_Button"
+        Me.AS_Button.Size = New System.Drawing.Size(75, 23)
+        Me.AS_Button.TabIndex = 5
+        Me.AS_Button.Text = "全解"
+        Me.AS_Button.UseVisualStyleBackColor = True
+        '
         '八皇后问题
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(532, 441)
+        Me.Controls.Add(Me.AS_Button)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Answer_ListBox)
         Me.Controls.Add(Me.Move_Button)
@@ -183,4 +194,5 @@ Partial Class 八皇后问题
     Friend WithEvents Move_Button As Button
     Friend WithEvents Answer_ListBox As ListBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents AS_Button As Button
 End Class

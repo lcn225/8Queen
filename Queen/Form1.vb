@@ -130,9 +130,11 @@ Public Class 八皇后问题
     ''找到第i个棋子的放法
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         formatDGV()
         textshow()
     End Sub
+    ''窗口初始化
 
     Private Sub Move_Button_Click(sender As Object, e As EventArgs) Handles Move_Button.Click
         movequeen(queenNum)
@@ -140,6 +142,7 @@ Public Class 八皇后问题
         textshow()
         displayDGV()
     End Sub
+    ''按移动按钮放棋子
 
     Private Sub locToString()
         locLine = loc(0) & " " & loc(1) & " " & loc(2) & " " & loc(3) & " " & loc(4) & " " & loc(5) & " " & loc(6) & " " & loc(7)
@@ -153,7 +156,7 @@ Public Class 八皇后问题
     End Sub
     ''将答案写入LB
 
-    Private Sub nextAnswer_Button_Click(sender As Object, e As EventArgs) Handles nextAnswer_Button.Click
+    Private Sub findAnswer()
 
         FileOpen(1, "Log.txt", OpenMode.Output)
 
@@ -177,15 +180,29 @@ Public Class 八皇后问题
         answerToLB()
         ''将答案写入LB
 
+
         textshow()
         displayDGV()
 
         FileClose(1)
+    End Sub
+    ''找下一个解
+
+    Private Sub nextAnswer_Button_Click(sender As Object, e As EventArgs) Handles nextAnswer_Button.Click
+
+        findAnswer()
 
     End Sub
+    ''按按钮找解
 
     Private Sub Answer_ListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Answer_ListBox.SelectedIndexChanged
         Dim ans As String = Answer_ListBox.SelectedItem.ToString
         displayDGV(ans)
+    End Sub
+
+    Private Sub AS_Button_Click(sender As Object, e As EventArgs) Handles AS_Button.Click
+        While queenNum <> 9
+            findAnswer()
+        End While
     End Sub
 End Class
