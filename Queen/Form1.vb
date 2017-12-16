@@ -50,7 +50,7 @@ Public Class 八皇后问题
         Dim an(0 To 7) As Integer
 
         For index = 0 To 7
-            an(index) = Mid(ans, 2 * index + 4, 1)
+            an(index) = Mid(ans, 2 * index + Len(ans) - 14, 1)
         Next
 
         For index = 1 To 8
@@ -131,8 +131,10 @@ Public Class 八皇后问题
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         formatDGV()
         textshow()
+
     End Sub
     ''窗口初始化
 
@@ -201,7 +203,7 @@ Public Class 八皇后问题
     End Sub
 
     Private Sub AS_Button_Click(sender As Object, e As EventArgs) Handles AS_Button.Click
-        While queenNum <> 9
+        While answerNum < 93
             findAnswer()
         End While
     End Sub
