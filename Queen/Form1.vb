@@ -70,15 +70,20 @@ Public Class 八皇后问题
 
     Private Sub textshow()
 
-        Label1.Text = "目前：" & answerNum & vbCrLf
+        Label1.Text = "目前解：" & answerNum & vbCrLf
+        Label1.Text = Label1.Text & "目前棋：" & queenNum
 
-        For index = 1 To 8
-            Label1.Text = Label1.Text & index & ": " & index & "," & loc(index - 1) & vbCrLf
-        Next
     End Sub
+    ''显示当前状态
 
     Private Sub movequeen(i As Integer)
         ''i即为queenNum，从1~8
+
+        If i = 9 Then
+            i = 8
+            queenNum = 8
+        End If
+        ''如果放好8个棋子了，则继续动第八个棋子（即继续找下一个解）
 
         Dim k As Integer
         ''定义比较棋子的编号
@@ -131,6 +136,9 @@ Public Class 八皇后问题
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Move_Button.Visible = testMode
+        Label1.Visible = testMode
+        ''仅在测试模式时显示
 
         formatDGV()
         textshow()
@@ -154,6 +162,7 @@ Public Class 八皇后问题
     Private Sub answerToLB()
         locToString()
         Answer_ListBox.Items.Add(answerNum & ": " & locLine)
+        Answer_ListBox.TopIndex = Answer_ListBox.Items.Count - 1
         answerNum += 1
     End Sub
     ''将答案写入LB
@@ -179,14 +188,20 @@ Public Class 八皇后问题
         End While
         ''当放好8个棋子之前，重复Move
 
+        FileClose(1)
+
+        textshow()
+
+        If loc(0) = 9 Then
+            MessageBox.Show("共找到" & answerNum - 1 & "个解")
+            Exit Sub
+        End If
+
+        displayDGV()
+
         answerToLB()
         ''将答案写入LB
 
-
-        textshow()
-        displayDGV()
-
-        FileClose(1)
     End Sub
     ''找下一个解
 
@@ -201,10 +216,14 @@ Public Class 八皇后问题
         Dim ans As String = Answer_ListBox.SelectedItem.ToString
         displayDGV(ans)
     End Sub
+    ''当点击LB时，显示对应棋盘
 
     Private Sub AS_Button_Click(sender As Object, e As EventArgs) Handles AS_Button.Click
-        While answerNum < 93
+        While loc(0) < 9
             findAnswer()
         End While
+        ''直到第一个棋子超过边界（即所有解遍历完毕），重复求解
     End Sub
+    ''按按钮求全解
+
 End Class

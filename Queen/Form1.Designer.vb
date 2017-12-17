@@ -174,7 +174,7 @@ Partial Class 八皇后问题
         Me.Controls.Add(Me.nextAnswer_Button)
         Me.Controls.Add(Me.View_DataGridView)
         Me.Name = "八皇后问题"
-        Me.Text = "Form1"
+        Me.Text = "八皇后问题"
         CType(Me.View_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
